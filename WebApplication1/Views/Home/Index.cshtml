@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    Layout = "_layout";
+}
+
+
+@section Menu {
+    <ul class="navbar-nav flex-grow-1">
+        @foreach (var option in (List<Menus>)ViewData["MenuOptions"])
+        {
+            <li class="nav-item">
+
+                <a class="nav-link text-dark" asp-area="" asp-controller="@option.Controller" asp-action="@option.Action">@option.Nome</a>
+            </li>
+        }
+    </ul>
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
